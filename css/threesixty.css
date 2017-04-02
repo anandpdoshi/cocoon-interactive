@@ -32,7 +32,7 @@ body {
 	Defines the criteria of the max. 480px wide mobiles' landscape mode and sets the image slider dimensions and centering according to it.
 */
 @media	screen and (max-device-width: 480px) and (orientation:landscape),
-				screen and (max-device-width: 960px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {
+				screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {
 	#threesixty {
 		width:360px;
 		height:225px;
