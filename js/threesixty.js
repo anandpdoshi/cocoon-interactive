@@ -169,6 +169,8 @@ function loadThreeSixty() {
 		We launch the application by...
 		Adding the preloader, and...
 	*/
+    $images.html('');
+
 	addSpinner();
 	// loading the firt image in the sequence.
 	loadImage();
