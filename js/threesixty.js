@@ -3,7 +3,7 @@
 * after all the DOM elements are rendered and ready to take action
 */
 
-window.color = "teal";
+window.color = window.location.hash ? window.location.hash.substring(1) : "teal";
 
 function loadThreeSixty() {
 	// Tells if the app is ready for user interaction
@@ -362,8 +362,8 @@ function loadThreeSixty() {
 
 $(document).ready(function() {
     $(".color-choices a").on("click", function() {
-        window.color = this.className;
-        loadThreeSixty();
+        window.location.hash = '#' + this.className;
+        window.location.reload();
     });
 
     loadThreeSixty();
