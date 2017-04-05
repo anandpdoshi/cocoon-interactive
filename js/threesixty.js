@@ -375,7 +375,11 @@ function loadThreeSixty() {
 
     function displayFeatures() {
         var f = getNormalizedCurrentFrame();
-        console.log(f);
+        // console.log(f);
+        if (!ready) {
+            return;
+        }
+
         if (f >= 155 || f <= 25) {
             $(".features .power-down, .power-down-label").removeClass("hidden");
             $(".features .power-up, .power-up-label").addClass("hidden");
