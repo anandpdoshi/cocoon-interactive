@@ -13,6 +13,8 @@ body {
     width: 300px;
 }
 
+
+
 .threesixy-container {
     position: relative;
     width: 100vw;
@@ -280,16 +282,31 @@ body {
     background-color: orange;
 }
 
+.color-choices a {
+    position: relative;
+}
+
+.color-choices .label {
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    display: inline-block;
+    bottom: 80%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
 @media (min-width: 1700px) {
     .feature-title {
         font-weight: 300;
-        font-size: 1.9rem;
+        font-size: 1.8rem;
     }
 
     .features small {
         font-weight: 300;
         color: #777;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .power-down-label {
