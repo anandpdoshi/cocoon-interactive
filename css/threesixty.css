@@ -280,7 +280,7 @@ body {
     background-color: orange;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1700px) {
     .feature-title {
         font-weight: 300;
         font-size: 1.9rem;
