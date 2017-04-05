@@ -358,7 +358,7 @@ function loadThreeSixty() {
 				// Calculates the distance between the pointer starting and ending position during the last tracking time period
 				pointerDistance = pointerEndPosX - pointerStartPosX;
 				// Calculates the endFrame using the distance between the pointer X starting and ending positions and the "speedMultiplier" values
-				endFrame = currentFrame + Math.ceil((totalFrames - 1) * speedMultiplier * (pointerDistance / $container.width()));
+				endFrame = currentFrame - Math.ceil((totalFrames - 1) * speedMultiplier * (pointerDistance / $container.width()));
 				// Updates the image slider frame animation
 				refresh();
 				// restarts counting the pointer tracking period
