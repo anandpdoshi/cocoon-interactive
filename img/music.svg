@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 155 155" style="enable-background:new 0 0 155 155;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+</style>
+<title>music</title>
+<circle class="st0" cx="77.5" cy="77.5" r="75"/>
+<g id="music">
+	<ellipse transform="matrix(0.8056 -0.5924 0.5924 0.8056 -59.8443 54.3001)" class="st0" cx="52.8" cy="118.3" rx="15.4" ry="10"/>
+	<line class="st0" x1="56" y1="49.8" x2="65.9" y2="110.4"/>
+	<line class="st0" x1="55.3" y1="50.8" x2="105.4" y2="25.2"/>
+	<ellipse transform="matrix(0.8056 -0.5924 0.5924 0.8056 -35.2093 78.5956)" class="st0" cx="102.2" cy="93" rx="15.4" ry="10.1"/>
+	<line class="st0" x1="105.3" y1="24.5" x2="115.3" y2="85"/>
+</g>
+</svg>

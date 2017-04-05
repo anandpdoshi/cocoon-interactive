@@ -50,7 +50,8 @@ function loadThreeSixty() {
 				x: 0,
 				speed: 4
 			},
-			fakePointerTimer = 0;
+			fakePointerTimer = 0,
+            featuresTimeout = null;
 
 	/**
 	* Adds a "spiral" shaped CanvasLoader instance to the #spinner div
@@ -78,7 +79,7 @@ function loadThreeSixty() {
 		var li = document.createElement("li");
 		// Generates the image file name using the incremented "loadedImages" variable
         // var imageName = "img/threesixty_" + (loadedImages + 1) + ".jpg";
-        var imageName = "img/" + window.color + "/cocoon-3d-Recovered-Recovered-" + (2000 + loadedImages) + ".jpg";
+        var imageName = "img/" + window.color + "/cocoon-3d-" + (1000 + loadedImages) + ".jpg";
 		/*
 			Creates a new <img> and sets its src attribute to point to the file name we generated.
 			It also hides the image by applying the "previous-image" CSS class to it.
@@ -276,6 +277,9 @@ function loadThreeSixty() {
 		event.preventDefault();
 		// Tells the pointer tracking function that the user finished dragging the pointer and it doesn't need to track the pointer changes anymore
 		dragging = false;
+
+        featuresTimeout && clearTimeout(featuresTimeout);
+        featuresTimeout = setTimeout(displayFeatures, 200);
 	});
 
 	/**
@@ -291,6 +295,9 @@ function loadThreeSixty() {
 		event.preventDefault();
 		// Starts tracking the pointer X position changes
 		trackPointer(event);
+
+        featuresTimeout && clearTimeout(featuresTimeout);
+        featuresTimeout = setTimeout(displayFeatures, 200);
 	});
 
 	/**
@@ -315,6 +322,9 @@ function loadThreeSixty() {
 		event.preventDefault();
 		// Starts tracking the pointer X position changes
 		trackPointer(event);
+
+        featuresTimeout && clearTimeout(featuresTimeout);
+        featuresTimeout = setTimeout(displayFeatures, 200);
 	});
 
 	/**
@@ -325,6 +335,9 @@ function loadThreeSixty() {
 		event.preventDefault();
 		// Tells the pointer tracking function that the user finished dragging the pointer and it doesn't need to track the pointer changes anymore
 		dragging = false;
+
+        featuresTimeout && clearTimeout(featuresTimeout);
+        featuresTimeout = setTimeout(displayFeatures, 200);
 	});
 
 	/**
@@ -354,10 +367,28 @@ function loadThreeSixty() {
 
 				pointerStartPosX = userDragging ? getPointerEvent(event).pageX : fakePointer.x;
 			}
+
 		} else {
 			return;
 		}
 	};
+
+    function displayFeatures() {
+        var f = getNormalizedCurrentFrame();
+        console.log(f);
+        if (f >= 155 || f <= 25) {
+            $(".features .power-down, .power-down-label").removeClass("hidden");
+            $(".features .power-up, .power-up-label").addClass("hidden");
+
+        } else if (f >= 65 && f <= 115) {
+            $(".features .power-up, .power-up-label").removeClass("hidden");
+            $(".features .power-down, .power-down-label").addClass("hidden");
+
+        } else {
+            $(".features .power-down, .features .power-up, .power-up-label, .power-down-label").addClass("hidden");
+        }
+
+    };
 };
 
 $(document).ready(function() {
@@ -365,6 +396,8 @@ $(document).ready(function() {
         window.location.hash = '#' + this.className;
         window.location.reload();
     });
+
+    $(".color-choices").animate({scrollLeft: $("." + window.color).position().left, opacity: 1}, 500);
 
     loadThreeSixty();
 

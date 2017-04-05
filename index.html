@@ -3,23 +3,94 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0" />
-	<title>360</title>
+	<title>Cocoon - 360º</title>
 	<link rel="stylesheet" href="css/reset.css" media="screen" type="text/css" />
 	<link rel="stylesheet" href="css/threesixty.css" media="screen" type="text/css" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Cocoon">
+
 </head>
 <body>
-    <ul class="color-choices">
-        <li><a class="teal">Teal</a></li>
-        <li><a class="maize-blue">Maize & Blue</a></li>
-        <li><a class="orange">Orange</a></li>
-        <li><a class="white">White</a></li>
+    <div class="header">
+        <div class="logo">
+            <span class="l1">c</span><span class="l2">o</span><span class="l3">c</span><span class="l4">o</span><span class="l5">o</span><span class="l6">n</span>
+        </div>
+    </div>
+    <div class="threesixy-container">
+    	<div id="threesixty">
+    		<div id="spinner">
+    			<span>0%</span>
+    		</div>
+    		<ol id="threesixty_images"></ol>
+    	</div>
+    </div>
+    <ul class="footer color-choices">
+        <li><a class="teal"><img src="img/teal/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="maize-blue"><img src="img/maize-blue/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="america"><img src="img/america/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="dawn"><img src="img/dawn/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="monarch"><img src="img/monarch/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="gryffindor"><img src="img/gryffindor/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="yellow-jacket"><img src="img/yellow-jacket/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="neon-green"><img src="img/neon-green/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="orange"><img src="img/orange/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="white"><img src="img/white/cocoon-3d-1000.jpg"></a></li>
+        <li><a class="baby-blue"><img src="img/baby-blue/cocoon-3d-1000.jpg"></a></li>
+
     </ul>
-	<div id="threesixty">
-		<div id="spinner">
-			<span>0%</span>
-		</div>
-		<ol id="threesixty_images"></ol>
-	</div>
+
+    <div class="features">
+        <div class="power-down hidden">
+            <div class='left icon feature-blockout'>
+                <img src="img/bulb.svg">
+                <p>
+                    <span class="feature-title">The Mask</span><br>
+                    <small>blocks out all light</small>
+                </p>
+            </div>
+            <div class='right icon feature-audio'>
+                <img src="img/music.svg">
+                <p>
+                    <span class="feature-title">Audio Capabilities</span><br>
+                    <small>help you relax with soothing sounds</small>
+                </p>
+            </div>
+            <div class='center icon feature-isolation'>
+                <img src="img/noise.svg">
+                <p>
+                    <span class="feature-title">Noise Isolation</span><br>
+                    <small>gives you the quiet headspace you deserve</small>
+                </p>
+            </div>
+        </div>
+        <div class="power-up hidden">
+            <div class='left icon feature-dawn'>
+                <img src="img/dawn.svg">
+                <p>
+                    <span class="feature-title">Dawn Simulation</span><br>
+                    <small>wakes you up, gently</small>
+                </p>
+            </div>
+            <div class='right icon feature-vibration'>
+                <img src="img/vibration.svg">
+                <p>
+                    <span class="feature-title">Vibrations</span><br>
+                    <small>ensure that you wake up</small>
+                </p>
+            </div>
+            <div class='center icon feature-auto'>
+                <img src="img/alarm-off.svg">
+                <p>
+                    <span class="feature-title">Sensor</span><br>
+                    <small>detects mask removal and stops the alarm</small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="power-down-label hidden">POWER DOWN</div>
+    <div class="power-up-label hidden">POWER UP</div>
 
 	<script src="js/heartcode-canvasloader-min.js"></script>
 	<script src="js/jquery-1.11.0.min.js"></script>

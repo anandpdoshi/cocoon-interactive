@@ -4,70 +4,150 @@
 */
 body {
     font-family: sans-serif;
+    line-height: 1.3;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.color-choices img {
+    width: 300px;
+}
+
+.threesixy-container {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    margin: auto;
+/*    height: 100vh;*/
+    overflow:hidden;
 }
 
 #threesixty {
-	position:absolute;
-	/* This one fixes the IE positioning bug */
-	overflow:hidden;
-	top:50%;
-	left:50%;
-	width:960px;
-	height:540px;
-	margin-left:-480px;
-	margin-top:-270px;
+    overflow:hidden;
 }
-/*
-	Defines the criteria for the max. 1024px wide tablets portrait mode and sets the image slider dimensions and centering according to it.
-*/
-@media	screen and (max-device-width: 960px) and (orientation:portrait) {
-	#threesixty {
-		width:720px;
-		height:450px;
-		margin-left:-360px;
-		margin-top:-225px;
-	}
-}
-/*
-	Defines the criteria of the max. 480px wide mobiles' landscape mode and sets the image slider dimensions and centering according to it.
-*/
-@media	screen and (max-device-width: 480px) and (orientation:landscape),
-				screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {
-	#threesixty {
-		width:360px;
-		height:225px;
-		margin-left:-180px;
-		margin-top:-113px;
-	}
-}
-/*
-	Defines the criteria of the max. 480px wide mobiles' portrait mode and sets the image slider dimensions and centering according to it.
-*/
-@media	screen and (max-device-width: 480px) and (orientation:portrait),
-				screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:portrait) {
-	#threesixty {
-		width:320px;
-		height:200px;
-		margin-left:-160px;
-		margin-top:-100px;
-	}
-}
+
 /*
 	Makes the image slider invisible by default
 */
 #threesixty_images {
 	display: none;
 }
+
 /*
 	Sets every image in the slider to be absolute positioned and dynamically sized.
 */
 #threesixty img {
 	position:absolute;
-	/* This one fixes the IE positioning bug */
-	top:0;
-	width:100%;
+    min-width: 800px;
+	max-width:100%;
 	height:auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+.footer {
+    height: 15vh;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.footer::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    height: 15vh;
+    text-align: center;
+    position: relative;
+}
+
+.header .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-weight: 500;
+    letter-spacing: -0.2rem;
+    font-family: 'Montserrat', sans-serif;
+/*    color: #02284B;*/
+    color: #000;
+}
+
+.logo .l1 { opacity: 0.5; }
+.logo .l2 { opacity: 0.6; }
+.logo .l3 { opacity: 0.7; }
+.logo .l4 { opacity: 1.0; }
+.logo .l5 { opacity: 0.7; }
+.logo .l6 { opacity: 0.6; }
+
+
+/*.features {
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    width: 100%;
+    min-width: 800px;
+    height: 65vh;
+}
+*/
+.features .icon {
+    display: inline-block;
+    width: auto;
+    opacity: 1;
+}
+
+.features .left,
+.features .right,
+.features .center {
+    -webkit-transition: left 1s, right 1s, opacity 1s; /* Safari */
+    transition: left 1s, right 1s, opacity 1s;
+}
+
+.features .left {
+    position: fixed;
+    top: 20vh;
+    left: 30vw;
+}
+
+.features .right {
+    position: fixed;
+    top: 20vh;
+    left: 65vw;
+}
+
+.features .center {
+    position: fixed;
+    top: 65vh;
+    left: 50%;
+}
+
+.features .hidden .left {
+    left: 27vw;
+    opacity: 0;
+}
+
+.features .hidden .right {
+    left: 68vw;
+    opacity: 0;
+}
+
+.features .hidden .center  {
+    left: 53%;
+    opacity: 0;
+}
+
+.feature-title {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.features small {
+    font-weight: 300;
+    color: #777;
+}
+
 /*
 	Sets the style of the visible current frame of the image slider animation
 */
@@ -75,6 +155,50 @@ body {
 	visibility:visible;
 	width:100%;
 }
+
+.icon img {
+    width: 40px;
+    position: absolute;
+    left: -50px;
+    max-width: 100px;
+    margin-top: 2px;
+}
+
+.power-down-label,
+.power-up-label {
+    font-size: 4rem;
+    color: #ddd;
+    font-weight: 100;
+    line-height: 1;
+    opacity: 1;
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+}
+
+.power-down-label {
+    transform: rotate(-90deg);
+    position: fixed;
+    left: -13%;
+    bottom: 50%;
+}
+
+.power-up-label {
+    transform: rotate(90deg) translateX(-25%);
+    position: fixed;
+    right: -8%;
+    top: 50%;
+}
+
+.power-down-label.hidden {
+    opacity: 0.2;
+    transform: rotate(-90deg) translateX(2%);
+}
+
+.power-up-label.hidden {
+    opacity: 0.2;
+    transform: rotate(90deg) translateX(2%);
+}
+
 /*
 	Sets the style of the visible "previous" frame of the image slider animation
 */
@@ -112,27 +236,33 @@ body {
 .color-choices {
     width: 100%;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    opacity: 0.5;
 }
 
 .color-choices li {
-    display: inline-block;
-    margin: 30px;
-    padding: 0px 30px;
-    position: relative;
+    display: inline;
+    width: 25%;
+    height: 15vh;
+/*    margin: 30px;*/
+/*    padding: 0px 15px;*/
+/*    position: relative;*/
 }
 
 .color-choices li a {
     cursor: pointer;
 }
 
-.color-choices a::before {
+/*.color-choices a::before {
     content: "";
     width: 15px;
     height: 15px;
     position: absolute;
     left: 5px;
 }
-
+*/
 .color-choices a.maize-blue::before {
     background-color: #FECA31;
 }
